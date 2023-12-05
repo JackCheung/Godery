@@ -3,6 +3,10 @@
 <head>
   <title>工具</title>
   <script>
+	   function selectContent() {
+	        var input = document.getElementById("asin");
+	        input.select();
+	      }
     function goToProductPage() {
       var asin = document.getElementById("asin").value;
       var url = "https://www.amazon.com/dp/" + asin + "/";
@@ -14,6 +18,6 @@
   <h1>asin跳转到亚马逊商品页面</h1>
 
   <label for="asin">请输入ASIN：</label>
-  <input type="text" id="asin"><button onclick="goToProductPage()">前往商品页面</button>
+  <input type="text" id="asin" onclick="selectContent()"><button onclick="goToProductPage()">前往商品页面</button>
 </body>
 </html>
