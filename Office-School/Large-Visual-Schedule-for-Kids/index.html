@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Large Visual Schedule for Kids - Godery</title>
+  <meta name="description" content="Use visual schedules to help your kids with autism, ADHD, or special needs stay organized and independent.">
+  <meta name="keywords" content="">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Godery">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Large Visual Schedule for Kids | Godery">
+  <meta property="og:description" content="Use visual schedules to help your kids with autism, ADHD, or special needs stay organized and independent.">
+  <meta property="og:site_name" content="Godery">
+  <meta property="og:image" content="https://godery.com/assets/Lc5ubtSnsoxYTNxymC0cook9n5e.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://godery.com/style.css">
+  <link rel="icon" href="/assets/HqXvb7occoyGkoxBUynczWPoneg.svg" type="image/svg+xml">
+  
+</head>
+<body>
+  <header class="header">
+    <div class="discount-banner">
+      <div class="discount-code">Prime Day 2026 Up to 70% off</div>
+    </div>
+    <div class="header-logo-row">
+      <div class="logo"><a href="/"><img src="/assets/Z2cSbSDQOopBRQxlpW4cCY2Lnpd.jpg" alt="Godery"></a><h1><a href="/">Godery</a></h1></div>
+      <div class="mobile-menu" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+    <div class="header-nav-row">
+      <ul class="nav-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/Office-School/">Office & School</a></li><li><a href="/Home-Kitchen/">Home & Kitchen</a></li><li><a href="/Sports-Outdoors/">Sports & Outdoors</a></li><li><a href="/Baby-Products/">Baby Products</a></li>
+      </ul>
+    </div>
+  </header>
+
+<main>
+  <!-- 面包屑导航 -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="/">Home</a>
+      <span>/</span>
+      <a href="/Office-School/">Office & School</a>
+      <span>/</span>
+      <span class="current">Large Visual Schedule for Kids</span>
+    </div>
+  </div>
+  <!-- 商品详情 -->
+  <div class="container product-container">
+    <div class="product-images">
+      <div class="main-image">
+        <div class="image-carousel" id="imageCarousel">
+          <img src="https://m.media-amazon.com/images/I/81lB0P1q33L._AC_SL1500_.jpg" alt="Product 1" class="carousel-img active">
+<img src="https://m.media-amazon.com/images/I/810+ctldC8L._AC_SL1500_.jpg" alt="Product 2" class="carousel-img ">
+
+        </div>
+        <div class="carousel-dots" id="carouselDots">
+          <span class="dot active" onclick="goToSlide(0)"></span>
+<span class="dot " onclick="goToSlide(1)"></span>
+
+        </div>
+      </div>
+      <div class="thumbnail-images">
+        <div class="thumbnail active" onclick="changeImage(1)"><img src="https://m.media-amazon.com/images/I/81lB0P1q33L._AC_SL1500_.jpg" alt="Thumbnail 1"></div>
+<div class="thumbnail " onclick="changeImage(2)"><img src="https://m.media-amazon.com/images/I/810+ctldC8L._AC_SL1500_.jpg" alt="Thumbnail 2"></div>
+
+      </div>
+    </div>
+    <div class="product-info">
+      <h1 class="product-title">Large Visual Schedule for Kids</h1>
+      <p class="product-price">$19.99</p>
+      <p class="product-description">Use visual schedules to help your kids with autism, ADHD, or special needs stay organized and independent.</p>
+      <div class="product-actions">
+        <a href="https://www.amazon.com/dp/B0C4FNDZ4S/" target="_blank" class="buy-now-btn">Buy on Amazon</a>
+        <button class="share-btn" onclick="openShareModal()">
+          <i class="fas fa-share-alt"></i> Share
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- 分享弹窗 -->
+  <div class="share-modal" id="shareModal">
+    <div class="share-modal-overlay" onclick="closeShareModal()"></div>
+    <div class="share-modal-content">
+      <div class="share-header">
+        <span class="share-title">Share this product with friends</span>
+        <button class="share-close" onclick="closeShareModal()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="share-product">
+        <img src="https://m.media-amazon.com/images/I/81lB0P1q33L._AC_SL1500_.jpg" alt="Product" class="share-product-img">
+        <div class="share-product-info">
+          <p class="share-product-name">Large Visual Schedule for Kids</p>
+          <p class="share-product-price">$19.99</p>
+        </div>
+      </div>
+      <!-- 手机端分享按钮 -->
+      <div class="share-buttons share-buttons-mobile">
+        <button class="share-option" onclick="shareTo('messages')"><i class="fab fa-apple"></i><span>Messages</span></button>
+        <button class="share-option" onclick="shareTo('whatsapp')"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></button>
+        <button class="share-option" onclick="shareTo('copy')"><i class="fas fa-copy"></i><span>Copy</span></button>
+        <button class="share-option" onclick="shareTo('messenger')"><i class="fab fa-facebook-messenger"></i><span>Messenger</span></button>
+        <button class="share-option" onclick="shareTo('email')"><i class="fas fa-envelope"></i><span>Email</span></button>
+      </div>
+      <!-- 电脑端分享按钮 -->
+      <div class="share-buttons share-buttons-desktop">
+        <button class="share-option" onclick="shareTo('email')"><i class="fas fa-envelope"></i><span>Email</span></button>
+        <button class="share-option" onclick="shareTo('pinterest')"><i class="fab fa-pinterest"></i><span>Pinterest</span></button>
+        <button class="share-option" onclick="shareTo('facebook')"><i class="fab fa-facebook-f"></i><span>Facebook</span></button>
+        <button class="share-option" onclick="shareTo('x')"><i class="fab fa-x"></i><span>X</span></button>
+        <button class="share-option" onclick="shareTo('copy')"><i class="fas fa-copy"></i><span>Copy link</span></button>
+        <button class="share-option" onclick="shareTo('qr')"><i class="fas fa-qrcode"></i><span>Scan QR code</span></button>
+      </div>
+      <div class="share-toast" id="shareToast">
+        <i class="fas fa-check-circle"></i>
+        <span>Link copied to clipboard!</span>
+      </div>
+    </div>
+  </div>
+  <!-- 相关商品 -->
+  <div class="container related-products">
+    <h2 class="related-title">Frequently Bought Together</h2>
+    <div class="product-carousel-container">
+      <button class="carousel-btn prev" onclick="scrollRelatedProducts(-1)">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="related-grid" id="relatedGrid">
+        <div class="related-card">
+    <a href="/Office-School/Teacher Helper Caddy/">
+        <img src="https://m.media-amazon.com/images/I/81L7e-keRgL._AC_SL1500_.jpg" alt="Teacher Helper Caddy" class="related-img">
+    </a>
+    <div class="related-info">
+        <h3 class="related-name"><a href="/Office-School/Teacher Helper Caddy/">Teacher Helper Caddy</a></h3>
+        <p class="related-price">$15.99</p>
+        <a href="https://www.amazon.com/dp/B081N3GJQV/" target="_blank" class="related-buy-btn">Buy on Amazon</a>
+    </div>
+</div>
+<div class="related-card">
+    <a href="/Office-School/Calendar-and-Weather-Pocket-Chart/">
+        <img src="https://m.media-amazon.com/images/I/81yCybPFCWL._AC_SL1500_.jpg" alt="Calendar and Weather Pocket Chart" class="related-img">
+    </a>
+    <div class="related-info">
+        <h3 class="related-name"><a href="/Office-School/Calendar-and-Weather-Pocket-Chart/">Calendar and Weather Pocket Chart</a></h3>
+        <p class="related-price">$24.99</p>
+        <a href="https://www.amazon.com/dp/B07V4JZKQX/" target="_blank" class="related-buy-btn">Buy on Amazon</a>
+    </div>
+</div>
+
+      </div>
+      <button class="carousel-btn next" onclick="scrollRelatedProducts(1)">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand">
+        <div class="logo"><a href="/"><img src="/assets/Z2cSbSDQOopBRQxlpW4cCY2Lnpd.jpg" alt="Godery"></a><h1><a href="/">Godery</a></h1></div>
+        <p>Shop AUVCAS premium school supplies, early childhood education materials, and home & classroom organization essentials. Browse baby photo albums, pocket charts, storage organizers & daily home decor for home and classroom use.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="/Office-School/">Office & School</a></li><li><a href="/Home-Kitchen/">Home & Kitchen</a></li><li><a href="/Sports-Outdoors/">Sports & Outdoors</a></li><li><a href="/Baby-Products/">Baby Products</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="/About-Godery/">About Godery</a></li><li><a href="/Wholesale/">Wholesale</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-social">
+        <h3>Follow Us</h3>
+        <div class="social">
+          <a href="https://www.amazon.com/stores/Godery/page/BDC99725-FB79-41E5-A5DB-9E3FC74A8377" target="_blank"><i class="fab fa-amazon"></i></a>
+<a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+
+        </div>
+        <p>Stay connected for exclusive offers and updates.</p>
+        <a href="#" class="back-to-top" onclick="scrollToTop()">TOP OF PAGE</a>
+      </div>
+    </div>
+    <div class="copyright">© 2011 - 2026 AUVCAS. All rights reserved.</div>
+  </div>
+</footer>
+<!--全站底部-自定义代码-->
+
+<script src="https://godery.com/script.js"></script>
+</body>
+</html>
+
