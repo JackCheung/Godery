@@ -16,7 +16,7 @@ body {
 }
 
 :root {
-  --primary: #F50100;
+  --primary: #E70012;
   --accent: var(--secondary);
   --secondary: #232F3E;
   --heading-font: 'Montserrat';
