@@ -173,10 +173,14 @@ def gen_product_card(p, cat_map):
     """生成单个商品卡片HTML（用于首页/分类页横滚 & 网格）"""
     cat_slug = cat_map.get(p["cat"], {}).get("slug", "")
     img_src = p['img'][0] if p['img'] else ""
+    img_src_2 = p['img'][1] if len(p['img']) > 1 else ""
     amazon_url = f"https://www.amazon.com/dp/{p['asin']}/" if p['asin'] else p['link']
+    # 第二张图片元素（有图才生成）
+    img2_html = f'<img src="{img_src_2}" alt="{p["title"]}" class="product-img-hover">' if img_src_2 else ''
     return f"""<div class="product-card">
     <a href="/{cat_slug}/{p['slug']}/">
         <img src="{img_src}" alt="{p['title']}" class="product-img">
+        {img2_html}
     </a>
     <div class="product-info">
         <h3 class="product-name"><a href="/{cat_slug}/{p['slug']}/">{p['title']}</a></h3>
@@ -190,10 +194,13 @@ def gen_related_card(p, cat_map):
     """生成相关商品卡片HTML（用于商品详情页底部）"""
     cat_slug = cat_map.get(p["cat"], {}).get("slug", "")
     img_src = p['img'][0] if p['img'] else ""
+    img_src_2 = p['img'][1] if len(p['img']) > 1 else ""
     amazon_url = f"https://www.amazon.com/dp/{p['asin']}/" if p['asin'] else p['link']
+    img2_html = f'<img src="{img_src_2}" alt="{p["title"]}" class="related-img-hover">' if img_src_2 else ''
     return f"""<div class="related-card">
     <a href="/{cat_slug}/{p['slug']}/">
         <img src="{img_src}" alt="{p['title']}" class="related-img">
+        {img2_html}
     </a>
     <div class="related-info">
         <h3 class="related-name"><a href="/{cat_slug}/{p['slug']}/">{p['title']}</a></h3>
@@ -552,11 +559,17 @@ def main():
                 related += other_prods[:15 - len(related)]
             related_html = "".join(gen_related_card(rp, cat_map) for rp in related)
 
+            # og:image 必须是绝对 URL
+            first_img = p["img"][0] if p["img"] else og_image
+            if first_img and not first_img.startswith("http"):
+                first_img = f"{SITE_DOMAIN}/template/{first_img}"
+            
             prod_page_data = {
                 "header": make_header(tpl_header_product, {
                     "product_title": p["title"],
                     "product_keywords": p["keywords"],
-                    "product_description": p["desc"]
+                    "product_description": p["desc"],
+                    "og_image": first_img
                 }),
                 "footer": footer_rendered,
                 "product_title": p["title"],
@@ -597,6 +610,20 @@ def main():
         with open(page_file, "w", encoding="utf-8") as f:
             f.write(page_html)
         all_sitemap_urls.append(f"{SITE_DOMAIN}/{slug}/")
+
+    # ===================== 生成 404 页面 =====================
+    tpl_404 = load_template("404.html")
+    page_404_data = {
+        "header": make_header(tpl_header_custom, {
+            "custom_title": "404 - Page Not Found",
+            "custom_keywords": "",
+            "custom_description": ""
+        }),
+        "footer": footer_rendered
+    }
+    page_404_html = render_template(tpl_404, page_404_data)
+    with open(os.path.join(OUTPUT_DIR, "404.html"), "w", encoding="utf-8") as f:
+        f.write(page_404_html)
 
     # ===================== 渲染静态资源 & CNAME =====================
     # style.css 用模板渲染（支持颜色占位符）
